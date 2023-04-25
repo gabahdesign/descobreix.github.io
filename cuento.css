@@ -1,0 +1,322 @@
+#Menu_horizontal{
+    list-style-type: none;
+    text-align: center;
+    font-weight: 100;
+}
+
+li{
+    display: inline;
+    text-align: center;
+    margin: 0 10px 0 0;
+}
+
+li a{
+    padding: 2px 7px 2px 7px;
+    color: #F7D4DC;
+    background-color: #F98EA6;
+    border: 1px solid #F7D4DC;
+    text-decoration: none;
+}
+
+li a:hover{
+    background-color: #BB4963;
+    color: #F7D4DC;
+}
+
+
+/*-----Navegació Desplegable-----*/
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  background-color: #BB4963;
+  color: #F7D4DC;
+}
+.dropdown-content a {
+  display: block;
+  color: #F7D4DC;
+  padding: 2px 7px 2px 7px;
+  text-decoration: none;
+  background-color: #F98EA6;
+  border: 1px solid #F7D4DC;
+}
+.dropdown-content a:hover {
+  background-color: #BB4963;
+  color: #F7D4DC;
+}
+
+/*-----SEPARADOR-----*/
+h2{
+    font-size: 72px;
+}
+
+/*-----SEPARADOR-----*/
+.agrupat{
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    overflow:hidden;
+    width:100%;
+    padding:0%;
+}
+    
+@media screen and (min-width: 720px){
+    .agrupat{
+        flex-direction:row;
+        height: 965px;
+        shape-outside: url(images/puerco.png); /* Agregamos la propiedad shape-outside */
+    }
+}
+        
+.ANIMACIO{
+    flex:1 0px;
+    height:50%;
+}
+
+@media screen and (min-width: 720px){
+    .ANIMACIO{
+        height:100%;
+        transition:flex 1.5s cubic-bezier(0.87, 0, 0.13, 1);}
+    .ANIMACIO:hover,
+    .ANIMACIO[data-hover]{
+        flex:1 20vw;
+    }
+}
+        
+/*-----Texto-----*/
+        
+        .texto1{
+            display:flex;
+            overflow:hidden;
+            height:100%;
+            padding-right: 100px; /* Agregamos un margen derecho de 100px */
+        }
+        
+        @media screen and (min-width: 720px){
+            .texto1{
+                align-items:center;
+                justify-content:center;
+                background:#F98EA6;
+            }
+        }
+        
+        
+        .texto2{
+            display:flex;
+            overflow:hidden;
+            height:100%;
+            padding-left: 100px; /* Agregamos un margen izquierdo de 100px */
+        }
+        
+        @media screen and (min-width: 720px){
+            .texto2{
+                align-items:center;
+                justify-content:center;
+                background-color:#F7D4DC;
+            }
+        }
+        
+        /*-----Imagenes-----*/
+        
+        .puerco{
+            position:absolute;
+            top:50%;
+        }
+        
+        @media screen and (min-width: 720px){
+            .puerco{
+                left:50%;
+                transform:translate(-50%, -50%);
+            }
+        }
+
+/*-----Capçalera-----*/
+
+  .background {
+  position: relative;
+  height: 250px;
+  background-image: url("images/puerco.png");
+  background-size: cover;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black; /* color de superposición */
+}
+
+.background p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 4px #F98EA6;
+}
+
+.background p2 {
+  font-family: Arial Black;
+  position: absolute;
+  font-size: 12em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #b59f8e;
+  text-align: center;
+  text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+  -webkit-text-stroke: 3px black; /* para navegadores webkit */
+  text-stroke: 3px black; /* para navegadores no webkit */
+  z-index: 10;
+}
+
+
+/*-----Botó Imatge-----*/
+
+.container {
+      position: relative;
+      width: 100%;
+      height: 400px;
+    }
+
+    .imatgerecuadro {
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      object-fit: fill;
+    }
+
+    .text-box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #F98EA6;
+      color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+.open-btn {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  background-color: #000;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  padding: 10px 20px;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.close-btn i {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.open-btn i {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/*-----Contenidor-----*/
+
+.contenidor1 {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .capsa1 {
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+        height: 43.5vh;
+        box-sizing: border-box;
+        padding: 20px;
+      }
+
+.contenidor2 {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #F98EA6;
+        padding: 20px;
+      }
+      .capsa2 {
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+        height: 65vh;
+        box-sizing: border-box;
+        background-color: white;
+      }
+
+.parte2 {
+        display: flex;
+        height: 190px;
+        padding: 20px;
+        background-color: white;
+        text-align: right;
+      }
+
+div.gallery {
+  border: 1px solid #BB4963;
+  width: 50%;
+  display: inline;
+  list-style-type: none;
+  text-align: center;
+}
+
+div.gallery:hover {
+  background-color: #BB4963;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+/*-----Credits-----*/
+
+.credits {
+  font-family: Comic Sans MS;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  color: black;
+  text-align: center;
+
